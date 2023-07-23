@@ -1,0 +1,87 @@
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 30px;
+    margin-bottom: 184px;
+    display: grid;
+    grid-template-columns: 720px 500px;
+    &_firstBlock{
+        height: 650px;
+        &_subheader{
+            font-size: 36px;
+            font-weight: 600;
+            color: #3a3a3a;
+            margin-bottom: 30px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            padding: 4px 30px;
+            object-fit: cover;
+        }
+    }
+    &_secondBlock{
+        width: 412px;
+        padding-top: 50px;
+        margin: 0 auto;
+        &_header{
+            &_price{
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 40px;
+                &_newPrice{
+                    font-size: 50px;
+                    font-weight: 600;
+                }
+                &_oldPrice{
+                    color: #8b8b8b;
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-decoration: line-through;
+                }
+                &_disc{
+                    color: #ff32a1;
+                    font-size: 28px;
+                    font-weight: 600;
+                }
+                &_onePrice{
+                    font-size: 50px;
+                    font-weight: 600;
+                }
+            }
+        }
+        &_btn{
+            cursor: pointer;
+            width: 200px;
+            height: 60px;
+            margin-bottom: 40px;
+            border: 2px solid #393;
+            background: #393;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        &_btn:hover{
+            box-shadow: 5px 5px 5px gray;
+            transition: all 0.5s;
+        }
+        &_line{
+            width: 422px;
+            height: 1px;
+            border: 1px dashed #c0c0c0;
+            margin-bottom: 25px;
+        }
+        &_subheader{
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        &_desc{
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 130%;
+        }
+    }
+}

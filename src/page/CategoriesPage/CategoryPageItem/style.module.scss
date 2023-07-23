@@ -1,0 +1,15 @@
+.category_item{
+    text-align: center;
+
+    img{
+        width: 290px;
+        height: 300px;
+        object-fit: cover;
+    }
+    &_title{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+}

@@ -1,0 +1,23 @@
+.category{
+    img{
+        cursor: pointer;
+        width: 285px;
+        height: 330px;
+        object-fit: cover;
+    }
+    &_title{
+        font-size: 18px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+@media(max-width: 850px){
+    .category{
+        img{
+            width: 195px;
+            height: 200px;
+        }
+    }
+}

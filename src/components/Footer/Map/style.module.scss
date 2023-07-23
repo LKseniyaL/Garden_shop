@@ -1,0 +1,16 @@
+.map{
+    max-width: 1280px;
+    margin: 0 auto; 
+    padding: 0 30px 38px 30px;
+
+    &_iframe{
+        width: 100%;
+        min-height: 525px;
+        border: none;
+    }
+}
+@media(max-width: 850px){
+    .map{
+        max-width: 850px;    
+    }
+}

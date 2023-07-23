@@ -1,0 +1,86 @@
+@mixin sizeWeight($size, $weight) {
+    font-size: $size;
+    font-weight: $weight
+};
+@mixin marginLeftMarginTop($left, $top) {
+    margin-left: $left;
+    margin-top: $top;
+}
+
+.banner{
+    background-color: #A1E2EB;
+
+    &_container{
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        min-height: 600px;
+        display: flex;
+        justify-content: space-between;    
+        &_block{
+    &_sale{
+        color: #ffff;
+        @include marginLeftMarginTop(50px, 130px);
+        @include sizeWeight(80px, 700);
+    }
+    &_h2{
+        color: #ffff;
+        @include marginLeftMarginTop(50px, 5px);
+        @include sizeWeight(63px, 700);
+    }
+    &_btn{
+        @include marginLeftMarginTop(51px, 60px);
+        @include sizeWeight(25px, 700);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffff;
+        width: 155px;
+        height: 82px;
+        border-radius: 13px;
+        a{
+            display: block;
+            text-decoration: none;
+            color: #2D2D2D;
+        }
+    }
+    &_btn:hover{
+        box-shadow: 5px 5px 5px gray;
+        transition: all 0.5s;
+    }
+}
+}
+}
+@media(max-width: 850px){
+    .banner{
+        &_container{
+            max-width: 850px;
+            min-height: 400px;
+            &_block{
+                &_sale{
+                    @include marginLeftMarginTop(50px, 80px);
+                    @include sizeWeight(60px, 700);
+                }
+                &_h2{
+                    @include sizeWeight(40px, 700);
+                }
+                &_btn{
+                    @include sizeWeight(20px, 700);
+                    width: 120px;
+                    height: 60px;
+                    a{
+                        text-decoration: none;
+                        color: #2D2D2D;
+                    }
+                }
+                &_btn:hover{
+                    box-shadow: 5px 5px 5px gray;
+                    transition: all 0.5s;
+                }
+        }
+        &_img{
+            width: 300px;
+        }
+    }
+    }
+}

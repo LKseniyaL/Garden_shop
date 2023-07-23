@@ -1,0 +1,103 @@
+@mixin marginLeft_marginTop($left, $top) {
+    margin-left: $left;
+    margin-top: $top;
+}
+
+.header{
+    min-height: 150px;
+    max-width: 1280px;
+    margin: 0 auto;
+    
+        &_nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 19px 28px;
+            &_container{
+                display: flex;
+                align-items: center;
+                gap: 57px;
+                &_btn{
+                    @include marginLeft_marginTop(60px, 0);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #339933;
+                    font-size: 16px;
+                    color: #fff;
+                    width: 125px;
+                    height: 50px;
+                    border: 2px solid #339933;
+                    border-radius: 5px;
+                }
+                &_btn:hover{
+                    box-shadow: 5px 5px 5px gray;
+                    transition: all 0.5s;
+                }
+
+            }
+            &_ul{
+                display: flex;
+                width: 100%;
+                justify-content: end;
+    
+                div{
+                    margin-right: 50px;
+                    list-style: none;
+                }
+                div:hover{
+                    text-shadow: 5px 5px 5px gray;
+                    transition: all 0.5s;   
+                }
+            }
+             &_basket{
+            @include marginLeft_marginTop(120px, 0);
+            margin-right: 28px;
+        }
+        }
+}
+.link{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+@media(max-width: 850px){
+    .header{
+        min-height: 0;
+        max-width: 850px;
+        margin: 0 auto;
+        &_nav{
+            display: flex;
+            margin: 19px 0;
+            &_container{
+                display: flex;
+                gap: 20px;
+                &_image{
+                    @include marginLeft_marginTop(20px, 0);
+                    width: 60px;
+                    height: 60px;
+                }
+                &_btn{
+                    @include marginLeft_marginTop(30px, 0);
+                    font-size: 12px;
+                    width: 100px;
+                    height: 40px;
+            }
+            }
+        &_ul{
+            display: flex;
+    
+            div{
+                list-style: none;
+            }
+        }
+        &_basket{
+            margin-left: 0;
+            margin-right: 28px;
+        }
+}
+}
+}

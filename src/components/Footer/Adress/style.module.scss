@@ -1,0 +1,113 @@
+@mixin title($size, $weight, $mb) {
+    font-size: $size;
+    font-weight: $weight;
+    margin-bottom: $mb;  
+}
+@mixin sizeWeight($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px 40px 32px;
+        &_contact{
+            @include sizeWeight(40px, 700);
+        }
+        &_tel{
+            display: block;
+            margin: 35px 0 30px 0;
+            @include sizeWeight(54px, 600);
+            cursor: pointer;
+            text-decoration: none;
+            color: #000000;
+        }
+        &_social_block{
+            display: flex;
+            margin-top: 25px;
+        }
+        &_instagram{
+            text-decoration: none;
+            margin-right: 35px;
+            cursor: pointer;
+            color: #000000;
+            img{
+                @include widthHeight(44px, 44px);
+                margin-left: 19px;
+                margin-right: 68px;
+                margin-bottom: 11px;
+            }
+            &_title{
+                @include title(15px, 600, 46px);   
+            }
+        }
+        &_whatsapp{
+            text-decoration: none;
+            color: #000000;
+            img{
+                @include widthHeight(44px, 44px);
+                margin-bottom: 11px;
+                margin-left: 19px;
+                cursor: pointer;
+            }
+            &_title{
+                @include title(15px, 600, 46px);   
+            }
+        }
+    &_address{
+        @include sizeWeight(40px, 700);
+        &_title{
+            @include sizeWeight(18px, 500);
+        }
+        &_hour{
+            padding-top: 2px;
+            @include sizeWeight(24px, 600);
+        }
+    }
+    &_address_block{
+        margin-left: 160px;
+        a{
+            display: block;
+            margin-top: 25px;
+            margin-bottom: 20px;   
+            color: #000000; 
+            @include sizeWeight(40px, 600);
+            @include widthHeight(546px, 104px)
+        }
+    }
+}
+@media(max-width: 850px){
+    .footer{
+        max-width: 850px;
+            &_contact{
+                @include sizeWeight(30px, 700);
+            }
+            &_tel{
+                @include sizeWeight(24px, 600);
+            }
+        &_address{
+            @include sizeWeight(30px, 700);
+            &_title{
+                @include sizeWeight(18px, 500);
+            }
+            &_hour{
+                padding-top: 2px;
+                @include sizeWeight(24px, 600);
+            }
+        }
+        &_address_block{
+            margin-left: 100px;
+            a{
+                @include sizeWeight(20px, 600);
+                @include widthHeight(420px, 104px)
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px 100px 30px;
+
+        &_header{
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        &_subheader{
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 34px;
+            margin-left: 500px;
+        }
+        &_unterLine{
+            height: 1px;
+            width: 800px;
+            color: #b8b8b8;
+        }
+        &_order{
+            display: flex;
+            gap: 40px;
+        }
+        &_cart{
+            font-size: 50px;
+            color: gray;
+            margin-top: 100px;
+        }
+}

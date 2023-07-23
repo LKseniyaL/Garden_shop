@@ -1,0 +1,92 @@
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+.discount{
+    background-color: #339933;
+
+    &_block{
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+    }
+    &_img{
+        @include widthHeight(422px, 422px);
+        margin: 27px 200px 27px 90px;
+    }
+    &_form{
+        &_sale{
+            margin: 44px 258px 0 0;
+            padding: 30px;
+            width: 100%;
+            min-height: 159px;
+            font-size: 90px;
+            color: #ffff;
+            font-weight: 700;
+            line-height: 0.6;
+    
+            span{
+                font-size: 50px;
+            }
+        }
+        input{
+           @include widthHeight(473px, 75px);
+            outline: none;
+            margin: 16px 0 30px 30px;
+            padding-left: 50px;
+            color: #6C6C6C;
+            font-size: 18px;
+            background-color: #ffff;
+            border-radius: 25px;
+            text-decoration: none;
+            border: none;
+        }
+        button{
+            @include widthHeight(473px, 75px);
+            margin-left: 30px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 25px;
+            color: #ffff;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        button:hover{
+            box-shadow: 10px 10px 10px;
+        }
+    }
+}
+@media(max-width: 850px){
+    .discount{
+        &_block{
+            max-width: 850px;
+        }
+        &_img{
+            @include widthHeight(380px, 300px);
+            margin: 29px 100px 29px 30px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &_form{
+            &_sale{
+                font-size: 60px;
+                line-height: 0.9;
+                padding: 0;
+            }
+            input{
+               @include widthHeight(350px, 65px);
+            }
+            button{
+                @include widthHeight(350px, 65px);
+                margin-bottom: 40px;
+                font-size: 18px;
+            }
+            button:hover{
+                box-shadow: 10px 10px 10px;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,82 @@
+.container{
+    &_firstBlock{
+        border-top: 1px solid #a7a7a7;
+        display: flex;
+        gap: 20px;
+        width: 750px;
+        position: relative;
+        img{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            width: 180px;
+            height: 166px;
+            border-radius: 10px;
+        }
+        &_titleBtn{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 300px;
+            height: 166px;
+            margin-top: 40px;
+            &_title{
+                font-size: 18px;
+                font-weight: 600;
+                color: #3a3a3a;
+                margin-bottom: 70px;
+            }
+            &_btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 34px;
+                border: 1px solid black;
+                border-radius: 12px;
+                padding: 0 15px;
+                width: 140px;
+
+                &_inc{
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+                &_dec{
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+                
+                &_count{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+        &_blockPrice{
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            height: 166px;
+            margin-top: 40px;
+            &_newPrice{
+                font-size: 40px;
+                font-weight: 600;
+            }
+            &_oldPrice{
+                color: #8b8b8b;
+                font-size: 20px;
+                font-weight: 500;
+                margin-right: 40px;
+                text-decoration: line-through;
+            }
+        }
+        &_delete{
+            cursor: pointer;
+            position: absolute;
+            font-size: 20px;
+            right: 10px;
+            top: 20px;
+        }
+        &_delete:hover{
+            text-shadow: 2px 2px 9px gray;
+        }
+    }
+}
