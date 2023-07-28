@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import MainPage from '../../page/MainPage';
+import MainBlock from "../MainBlock";
 import ProductsContainer from '../../page/AllProductsPage/ProductsContainer';
 import BasketPage from '../../page/BasketPage/Basket';
 import CategoryPageContainer from '../../page/CategoriesPage/CategoryPageContainer';
@@ -16,14 +16,14 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout/>}>
-        <Route index element={<MainPage/>}/>
-        <Route path="/categories" element={<CategoryPageContainer/>}/>
-        <Route path="/allproducts/:id" element={<ProductDescription/>}/>
-        <Route path="/categories/:category" element={<ProductsItemContainerPage/>}/>
-        <Route path="/allproducts" element={<ProductsContainer/>}/>
-        <Route path="/allsale" element={<ProductsWithSaleContainer/>}/>
-        <Route path="/basket" element={<BasketPage/>}/>
-        <Route path="*" element={<NotFound/>}/>
+          <Route index element={<MainBlock/>}/>
+          <Route path="/categories" element={<CategoryPageContainer/>}/>
+          <Route path="/allproducts/:id" element={<ProductDescription/>}/>
+          <Route path="/categories/:category" element={<ProductsItemContainerPage/>}/>
+          <Route path="/allproducts" element={<ProductsContainer/>}/>
+          <Route path="/allsale" element={<ProductsWithSaleContainer/>}/>
+          <Route path="/basket" element={<BasketPage/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Route>
       </Routes>
       <Footer/>

@@ -15,13 +15,14 @@
     const [maxValue, setMaxValue] = useState('');
 
     const dispatch = useDispatch();
+    
     useEffect(() => {
       dispatch(fetchSaleProducts())
     }, [dispatch]);
 
 
     useEffect(() => {
-      // Фильтруем автоматически после каждого изменения значений
+      // Фильтрует автоматически после каждого изменения значений
       dispatch(filterItems({ minValue: +minValue || 0, 
                              maxValue: +maxValue || Infinity }));
     }, [minValue, maxValue, dispatch]);
@@ -45,22 +46,22 @@
           <div className={s.container_sort_price}>
             <div className={s.container_sort_price_subheader}>Price</div>
             <form>
-            <input
-              type="number"
-              name='min'
-              placeholder='from'
-              min='0'
-              value={minValue}
-              onChange={(e) => setMinValue(e.target.value)}
-              className={s.container_sort_price_input} />
-            <input
-              type="number"
-              name='max'
-              placeholder='to'
-              min='0'
-              value={maxValue}
-              onChange={(e) => setMaxValue(e.target.value)}
-              className={s.container_sort_price_input} />
+              <input
+                type="number"
+                name='min'
+                placeholder='from'
+                min='0'
+                value={minValue}
+                onChange={(e) => setMinValue(e.target.value)}
+                className={s.container_sort_price_input} />
+              <input
+                type="number"
+                name='max'
+                placeholder='to'
+                min='0'
+                value={maxValue}
+                onChange={(e) => setMaxValue(e.target.value)}
+                className={s.container_sort_price_input} />
           </form>
           </div>
 

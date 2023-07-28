@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-    list: []
+    list: [],
+    status: 'loading'
 };
 
 export const fetchSaleMainItemSlice = createAsyncThunk(
@@ -29,7 +30,7 @@ export const saleMainItemSlice = createSlice({
         })
         .addCase(fetchSaleMainItemSlice.rejected, (state, action) => {
             state.status = 'rejected';
-            state.erroe = action.payload;
+            state.error = action.payload;
         })
     }
 });

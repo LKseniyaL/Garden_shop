@@ -1,12 +1,12 @@
-import React from 'react';
-import BasketItem from '../BasketItem';
+  import React from 'react';
+  import BasketItem from '../BasketItem';
 
-export default function BasketList({list}) {
-  return (
-    <div>
-      {
-        list.map(item => <BasketItem key={item.id} {...item}/>)
-      }
-    </div>
-  )
-}
+  export default function BasketList({list}) {
+    return (
+      <div>
+        {
+          list.map(item => <BasketItem key={item.id} {...item}/>)
+        }
+      </div>
+    )
+  }

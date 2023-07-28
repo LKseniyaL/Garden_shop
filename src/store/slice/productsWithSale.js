@@ -20,7 +20,7 @@ export const fetchSaleProducts = createAsyncThunk(
 );
 
 const calculateNewPrice = (price, discont_price) => {
-    return (price - (price * discont_price / 100)).toFixed(2);
+  return discont_price ? (price - (price * discont_price / 100)).toFixed(2) : price;
   };
   
   const calculateShowItem = (item, minValue, maxValue) => {

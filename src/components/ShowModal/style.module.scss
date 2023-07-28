@@ -25,23 +25,27 @@
     box-shadow: 5px 5px 10px white;
     background-color: #38ada9;
     position: relative;
-  
-    &_title {
-      font-weight: 700;
-      color: #ffffff;
-      text-align: center;
-      padding-top: 100px;
-      font-size: 40px;
+    &_description{
+      width: 400px;
+      margin: 0 auto;
+      &_title {
+        font-weight: 700;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 100px;
+        font-size: 40px;
+      }
+    
+      &_discount {
+        @include fontSize_fontWeight(50px, 400);
+        color: #ffffff;
+        padding-top: 50px;
+        text-align: center;
+        text-shadow: 5px 5px 5px red;
+      }
+    
+
     }
-  
-    &_discount {
-      @include fontSize_fontWeight(50px, 400);
-      color: #ffffff;
-      padding-top: 50px;
-      text-align: center;
-      text-shadow: 5px 5px 5px red;
-    }
-  
     &_btn {
       @include fontSize_fontWeight(30px, 700);
       @include widthHeight(40px, 40px);
