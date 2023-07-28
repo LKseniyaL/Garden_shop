@@ -1,15 +1,17 @@
   import React, { useEffect, useState }from 'react';
   import { useSelector, useDispatch } from 'react-redux';
   import ProductWithSaleItem from '../ProducWithSaletItem';
-  import { fetchSaleProducts, filterItems } from '../../../store/slice/productsWithSale';
-  import { sortProducts } from '../../../store/slice/productsWithSale';
+  // import { fetchSaleProducts, filterItems } from '../../../store/slice/productsWithSale';
+  import { fetchProduct, filterItems, sortProducts } from '../../../store/slice/allProductsSlice';
+  // import { sortProducts } from '../../../store/slice/productsWithSale';
   import s from './style.module.scss';
   import Spinner from '../../../components/ProcessingRequest/Spinner';
   import Error from '../../../components/ProcessingRequest/Error';
 
   export default function ProductsWithSaleContainer() {
-    const productsSale = useSelector(state => state.productsWithReducer.list);
-    const status = useSelector(state => state.productsWithReducer.status);
+    const newList = useSelector(state => state.allProductsSlice.list)
+                    .filter(item => item.discont_price !== null);
+    const status = useSelector(state => state.allProductsSlice.status);
 
     const [minValue, setMinValue] = useState('');
     const [maxValue, setMaxValue] = useState('');
@@ -17,7 +19,7 @@
     const dispatch = useDispatch();
     
     useEffect(() => {
-      dispatch(fetchSaleProducts())
+      dispatch(fetchProduct())
     }, [dispatch]);
 
 
@@ -77,7 +79,7 @@
 
         <div className={s.container_image}>
           {
-             productsSale.filter(item => item.show_item)
+             newList.filter(item => item.show_item)
             .map(item => <ProductWithSaleItem key={item.id} {...item}/>)
           }
         </div>

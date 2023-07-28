@@ -4,8 +4,8 @@ const initialState = {
     list:[{}]
 };
 
-export const fetchCategory = createAsyncThunk(
-    'categories/fetchCategory',
+export const fetchCategories = createAsyncThunk(
+    'categories/fetchCategories',
     async () => {
         const response = await fetch('http://localhost:3333/categories/all');
         const data = await response.json();
@@ -13,24 +13,24 @@ export const fetchCategory = createAsyncThunk(
     }
 );
 
-export const categoriesPageSlice = createSlice({
+export const allCategoriesSlice = createSlice({
  name: 'categories',
  initialState,
  reducers: {},
  extraReducers: (builder) => {
     builder
-    .addCase(fetchCategory.pending, (state) => {
+    .addCase(fetchCategories.pending, (state) => {
         state.status = 'loading';
     })
-    .addCase(fetchCategory.fulfilled, (state, action) => {
+    .addCase(fetchCategories.fulfilled, (state, action) => {
         state.status = 'resolved';
         state.list = action.payload;
     })
-    .addCase(fetchCategory.rejected, (state, action) => {
+    .addCase(fetchCategories.rejected, (state, action) => {
         state.atatus = 'rejected';
         state.error = action.payload;
     })
  }
 });
 
-export default categoriesPageSlice.reducer;
+export default allCategoriesSlice.reducer;

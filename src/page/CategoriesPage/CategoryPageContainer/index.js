@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../../../components/ProcessingRequest/Spinner';
 import Error from '../../../components/ProcessingRequest/Error';
-import { fetchCategory } from '../../../store/slice/categoriesPageSlice';
+import { fetchCategories } from '../../../store/slice/allCategoriesSlice';
 import CategoryPageItem from '../CategoryPageItem';
 import s from './style.module.scss';
 
 export default function CategoriesPage() {
-  const categoryPage = useSelector(state => state.categoriesPage.list);
-  const status = useSelector(state => state.categoriesPage.status);
+  const categoryPage = useSelector(state => state.allCategoriesReducer.list);
+  const status = useSelector(state => state.allCategoriesReducer.status);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategory())
+    dispatch(fetchCategories())
   }, [dispatch]);
 
   if(status === 'loading'){

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories } from "../../../store/slice/categoriesSlice";
+import { fetchCategories } from "../../../store/slice/allCategoriesSlice";
 import { Link } from "react-router-dom";
 import Spinner from "../../ProcessingRequest/Spinner";
 import Error from "../../ProcessingRequest/Error";
@@ -8,8 +8,8 @@ import s from "./style.module.scss";
 import CategoryItem from "../CategoryItem";
 
 export default function CategoryCatalog() {
-  const categories = useSelector((state) => state.categoriesReducer.list);
-  const status = useSelector((state) => state.categoriesReducer.status);
+  const categories = useSelector((state) => state.allCategoriesReducer.list).slice(0, 4);
+  const status = useSelector((state) => state.allCategoriesReducer.status);
 
   const dispatch = useDispatch();
 
